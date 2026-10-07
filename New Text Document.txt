@@ -1,0 +1,1502 @@
+1. Exploring AWS CloudShell and the AWS Cloud9 IDE
+
+
+
+
+
+
+
+AWS CloudShell is a browser-based command-line interface that allows users to manage AWS resources without local setup. It comes pre-installed with AWS CLI and essential tools. AWS Cloud9 is a cloud-based IDE for writing, running, and debugging code. Together, they simplify cloud development and resource management.
+
+
+
+
+
+
+
+Step 1: Create an AWS Account
+
+
+
+1.	Open the browser and go to https://aws.amazon.com/ 
+
+
+
+2.	Click on Create an AWS Account. 
+
+
+
+3.	Enter the following details: 
+
+
+
+o	Email address 
+
+
+
+o	Password 
+
+
+
+o	AWS account name 
+
+
+
+4.	Choose Personal Account. 
+
+
+
+5.	Enter billing details (credit/debit card required for verification). 
+
+
+
+6.	Complete phone number verification. 
+
+
+
+7.	Select Basic Support Plan (Free). 
+
+
+
+8.	Log in to the AWS Management Console. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 2: Launch AWS CloudShell
+
+
+
+1.	Log in to the AWS Management Console. 
+
+
+
+2.	On the top navigation bar, click the CloudShell icon (>_)
+
+
+
+(or search “CloudShell” in the search bar). 
+
+
+
+3.	Click Launch CloudShell. 
+
+
+
+4.	Wait for 30–60 seconds until the environment is ready.  
+
+
+
+ 
+
+
+
+Step 3: Verify AWS CLI
+
+
+
+1.	In the CloudShell terminal, type: aws --version
+
+
+
+2.	Observe the AWS CLI version details. 
+
+
+
+ 
+
+
+
+Step 4: Create and Navigate Directory
+
+
+
+1.	Create a new folder:  mkdir aws-practice
+
+
+
+2.	Move into the folder: cd aws-practice
+
+
+
+ 
+
+
+
+Step 5: Upload a File
+
+
+
+1.	Click the Upload File option in CloudShell. 
+
+
+
+2.	Select a file from your system. 
+
+
+
+3.	Verify that the file is uploaded successfully. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 6: Verify AWS Identity
+
+
+
+1.	Run the following command: aws sts get-caller-identity
+
+
+
+o	Observe details like: Account ID 
+
+
+
+o	User/Role ARN 
+
+
+
+ 
+
+
+
+Result
+
+
+
+Successfully explored AWS CloudShell and executed basic AWS CLI commands.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Working with Amazon S3 OR Orchestrating Serverless Functions with AWS Step Functions
+
+
+
+
+
+
+
+Amazon S3:
+
+
+
+Amazon S3 is a scalable object storage service used to store and retrieve data from anywhere. It provides high durability, availability, and security for files. Users can upload, download, and manage data easily. It is widely used for backups, hosting, and data storage.
+
+
+
+
+
+
+
+AWS Step Functions:
+
+
+
+AWS Step Functions is a serverless orchestration service used to coordinate multiple AWS services. It allows developers to build workflows using state machines. It integrates easily with AWS Lambda for automation. It helps in designing scalable and reliable applications.
+
+
+
+
+
+
+
+Aim
+
+
+
+To store and manage files using Amazon S3.
+
+
+
+To create and execute a serverless workflow using AWS Step Functions and Lambda.
+
+
+
+
+
+
+
+Procedure
+Step 1: Open Amazon S3
+
+1.	Log in to the AWS Management Console. 
+
+2.	In the search bar, type S3. 
+
+3.	Select Amazon S3 service. 
+
+Step 2: Create a Bucket
+
+1.	Click on Create Bucket. 
+
+2.	Enter a unique bucket name. 
+
+3.	Select region (default can be used). 
+
+4.	Click Create Bucket. 
+
+
+Step 3: Upload a File
+1.	Open the created bucket. 
+2.	Click Upload → Add files. 
+3.	Select any file from the system. 
+4.	Click Upload. 
+
+
+
+ Step 4: View File
+
+
+
+1.	Click on the uploaded file. 
+
+
+
+2.	Perform actions such as: 
+
+
+
+o	Download file 
+
+
+
+o	Open file 
+
+
+
+o	Make file public (if required) 
+
+
+
+ 
+
+
+
+Step 5: Delete Resources (Important)
+
+
+
+1.	Delete the uploaded file. 
+
+
+
+2.	Delete the bucket. 
+
+
+
+ 
+
+
+
+Result
+
+
+
+Successfully stored and managed files using Amazon S3.
+
+
+
+
+
+
+
+ 
+
+
+
+Procedure
+
+
+
+Step 1: Create Lambda Function
+
+
+
+1.	Open AWS Management Console. 
+
+
+
+2.	Search and open AWS Lambda. 
+
+
+
+3.	Click Create function → Select Author from scratch. 
+
+
+
+4.	Enter function name: demoFunction. 
+
+
+
+5.	Click Create function.
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 2: Add Lambda Code
+
+
+
+1.	In the code section, paste the following code:
+
+
+
+def lambda_handler(event, context):
+
+
+
+    return "Hello from Lambda"
+
+
+
+2.	Click Deploy. 
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+Step 3: Create Step Function
+
+
+
+1.	Open AWS Step Functions. 
+
+
+
+2.	Click Create state machine. 
+
+
+
+3.	Choose Express Workflow. 
+
+
+
+4.	Select Design visually.
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 4: Add Task State
+
+1.	Click Add state → Select Task. 
+2.	Choose Lambda Invoke. 
+3.	Select the function demoFunction.
+Step 5: Create Workflow
+
+1.	Click Next. 
+
+
+
+2.	Enter a name for the state machine. 
+
+
+
+3.	Click Create state machine. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 6: Execute Workflow
+
+
+
+1.	Click Start execution. 
+
+
+
+2.	Click Start.
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 7: Verify Output
+
+
+
+1.	Observe the execution status as Success. 
+
+
+
+2.	Click the task to view output:
+
+
+
+
+
+
+
+Hello from Lambda
+
+
+
+ 
+
+
+
+ 
+
+
+
+Result
+
+
+
+Successfully created and executed a serverless workflow using AWS Step Functions and Lambda.
+
+
+
+
+
+
+
+3.Working with Amazon DynamoDB
+
+
+
+
+
+
+
+Amazon DynamoDB is a fully managed NoSQL database service provided by AWS. It offers fast and predictable performance with seamless scalability. It supports key-value and document data models. It is commonly used for real-time applications requiring low latency.
+
+
+
+
+
+
+
+Aim
+
+
+
+To create and manage a NoSQL database table using Amazon DynamoDB.
+
+
+
+
+
+
+
+Procedure
+
+
+
+Step 1: Login to AWS
+
+
+
+1.	Open the AWS Management Console. 
+
+
+
+2.	Log in using valid credentials. 
+
+
+
+ 
+
+
+
+Step 2: Access DynamoDB
+
+
+
+1.	In the search bar, type DynamoDB. 
+
+
+
+2.	Select Amazon DynamoDB from the results. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 3: Create a Table
+
+
+
+1.	Click on Create Table. 
+
+
+
+2.	Enter the following details: 
+
+
+
+o	Table Name 
+
+
+
+o	Partition Key (Primary Key) 
+
+
+
+3.	Leave other settings as default or required. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 4: Configure Table Settings
+
+
+
+1.	Select Customized Settings. 
+
+
+
+2.	Choose DynamoDB Standard-IA as the table class. 
+
+
+
+3.	Click on Create Table. 
+
+
+
+4.	Wait until the table status shows Active/Created. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 5: Add Items to Table
+
+
+
+1.	Select the created table. 
+
+
+
+2.	Click on Explore Table Items. 
+
+
+
+3.	Click on Create Item. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Step 6: Add Attributes
+
+
+
+1.	Click on Add New Attribute. 
+
+
+
+2.	Enter the following: 
+
+
+
+o	Field names 
+
+
+
+o	Required values 
+
+
+
+o	Data types (String, Number, etc.) 
+
+
+
+
+
+
+
+3.	Click Create Item to save. 
+
+
+
+ 
+
+
+
+Step 7: Modify / Duplicate Attributes
+
+
+
+1.	Open an existing item. 
+
+
+
+2.	Click on Add New Attribute again. 
+
+
+
+3.	Enter a new attribute with similar or updated values
+
+
+
+(used to simulate duplication or adding more fields). 
+
+
+
+4.	Save the changes.
+
+
+
+
+
+
+
+Step 8: Delete Attributes
+
+
+
+1.	Open the item. 
+
+
+
+2.	Select the attribute you want to remove. 
+
+
+
+3.	Click on Delete Attribute option. 
+
+
+
+4.	Save the changes. 
+
+
+
+ 
+
+
+
+Step 9: Delete Item (Optional)
+
+
+
+1.	Select the item from the table. 
+
+
+
+2.	Click on Delete Item. 
+
+
+
+3.	Confirm deletion. 
+
+
+
+ 
+
+
+
+Step 10: Delete Table (Important for Lab)
+
+
+
+1.	Go back to the tables list. 
+
+
+
+2.	Select the created table. 
+
+
+
+3.	Click Delete Table. 
+
+
+
+4.	Confirm deletion.
+
+
+
+ 
+
+
+
+Result
+
+
+
+Successfully created, modified, and deleted data in Amazon DynamoDB.
+
+
+
+
+
+
+
+
+
+
+
+4. Developing REST APIs using AWS API Gateway
+
+
+
+
+
+
+
+Amazon API Gateway is a service used to create, publish, and manage REST APIs. It acts as an interface between client applications and backend services like Lambda. It supports security, monitoring, and traffic management. It is widely used for building serverless web applications.
+
+
+
+
+
+
+
+Aim
+
+
+
+To develop and deploy a REST API using AWS API Gateway integrated with AWS Lambda.
+
+
+
+ 
+
+
+
+Procedure
+
+
+
+ 
+
+
+
+Part A: Create Lambda Function
+
+
+
+Step 1: Login to AWS
+
+
+
+1.	Open the AWS Management Console. 
+
+
+
+2.	Log in using valid credentials. 
+
+
+
+Step 2: Create Lambda Function
+
+
+
+1.	In the search bar, type Lambda. 
+
+
+
+2.	Select AWS Lambda. 
+
+
+
+3.	Click on Create Function. 
+
+
+
+4.	Choose Author from Scratch. 
+
+
+
+5.	Enter the function name. 
+
+
+
+6.	Select runtime as Python 3.10. 
+
+
+
+7.	Click Create Function. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Part B: Create Test Event
+
+
+
+Step 3: Configure Test Event
+
+
+
+1.	Click on Test. 
+
+
+
+2.	Select Create New Test Event. 
+
+
+
+3.	Enter an event name. 
+
+
+
+4.	Click Save. 
+
+
+
+Step 4: Test Lambda Function
+
+
+
+1.	Click Test again. 
+
+
+
+2.	Verify the execution result and output. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Part C: Create API Gateway
+
+
+
+Step 5: Access API Gateway
+
+
+
+1.	In the search bar, type API Gateway. 
+
+
+
+2.	Select Amazon API Gateway. 
+
+
+
+Step 6: Create API
+
+
+
+1.	Click on Create API. 
+
+
+
+2.	Select REST API and click Build. 
+
+
+
+3.	Enter API name. 
+
+
+
+4.	Click Create API.
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Part D: Create Method
+
+
+
+Step 7: Configure GET Method
+
+
+
+1.	Click on Actions → Create Method. 
+
+
+
+2.	Select GET method. 
+
+
+
+3.	Choose Lambda Function as integration type. 
+
+
+
+4.	Select your created Lambda function. 
+
+
+
+5.	Click Save and allow permissions. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Part E: Deploy API
+
+
+
+Step 8: Deploy API
+
+
+
+1.	Click on Actions → Deploy API. 
+
+
+
+2.	Select New Stage. 
+
+
+
+3.	Enter stage name (e.g., dev). 
+
+
+
+4.	Click Deploy. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+Part F: Test API
+
+
+
+Step 9: Invoke API
+
+
+
+1.	Copy the Invoke URL. 
+
+
+
+2.	Paste it in a web browser or Postman. 
+
+
+
+3.	Observe the output response. 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+Result
+
+
+
+Successfully developed and deployed a REST API using AWS API Gateway integrated with Lambda.
+
+EXPERIMENT No. 05
+
+
+
+Creating Lambda Functions Using the AWS SDK for Python
+
+
+
+Procedure
+
+
+
+Step 1:
+
+
+
+Go to the AWS Management Console and search for Lambda in the search bar.
+
+
+
+Step 2:
+
+
+
+Click on Create function.
+
+
+
+ 
+
+
+
+Step 3:
+
+
+
+Select Author from scratch 
+
+
+
+Enter the Function name 
+
+
+
+Choose Runtime as Python 3.10 
+
+
+
+ 
+
+
+
+Step 4:
+
+
+
+Click on Additional Configuration 
+
+
+
+Enable Function URL 
+
+
+
+Set Auth type as None 
+
+
+
+ 
+
+
+
+Step 5:
+
+
+
+Click on Create function.
+
+
+
+The Lambda function will be successfully created.
+
+
+
+Step 6:
+
+
+
+Click on Create new test event 
+
+
+
+Enter a name for the test event 
+
+
+
+Click on Save 
+
+
+
+ 
+
+
+
+
+
+
+
+Step 7:
+
+
+
+Copy the Function URL 
+
+
+
+Paste it into a web browser (e.g., Google Chrome) 
+
+
+
+You will see the output displayed (e.g., "Hello from Lambda" or your defined response)
+
+
+
+
+Exercise no-6: Migrating a Web Application to Docker Containers
+
+
+
+
+
+
+
+Part A: Launch EC2 Instance
+
+
+
+Step 1:
+
+
+
+Go to AWS Console → Search EC2
+
+
+
+Step 2:
+
+
+
+Click on Launch Instance
+
+
+
+Step 3:
+
+
+
+●	Enter Instance Name 
+
+
+
+●	Select Key Pair 
+
+
+
+●	Click Launch Instance 
+
+
+
+Step 4:
+
+
+
+Click on Connect → Connect to open terminal
+
+
+
+ 
+
+
+
+
+
+
+
+Part B: Install Docker
+
+
+
+sudo yum update -y
+
+
+
+sudo yum install docker -y
+
+
+
+sudo systemctl start docker
+
+
+
+sudo systemctl enable docker
+
+
+
+
+
+
+
+Part C: Create Web Application
+
+
+
+Create HTML file:
+
+
+
+nano index.html
+
+
+
+Add:
+
+
+
+<h1>Hello Students!</h1>
+
+
+
+Save and exit:
+
+
+
+●	Press Ctrl + O → Enter 
+
+
+
+●	Press Ctrl + X 
+
+
+
+
+
+
+Part D: Create Dockerfile
+
+nano Dockerfile
+
+Add:
+
+FROM nginx:latest
+
+COPY . /usr/share/nginx/html
+
+Save and exit.
+
+Part E: Build Docker Image
+
+sudo docker build -t my-web-app .
+
+Part F: Run Docker Container
+sudo docker run -d -p 80:80 my-web-app
+
+Part G:  Get your EC2 Public IP
+●	Go to AWS EC2 Dashboard 
+
+●	Copy Public IPv4 address
+
+Example: http://13.232.45.100
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+sudo docker ps
+
+
+
+sudo docker stop 0091f02593d7
+
+
+
+sudo docker rm <container_id>
